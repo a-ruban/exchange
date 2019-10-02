@@ -1,0 +1,38 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    networks:
+      - backend
+    environment:
+      - PYTHONPATH=./
+      - DEVELOPMENT=True
+    command: python manage.py runserver 0.0.0.0:8000
+
+    ports:
+      - "8000:8000"
+
+
+  redis:
+    image: redis:5.0.4-alpine
+    networks:
+      - backend
+
+  celery:
+    build: .
+    command: celery worker -A celeryapp --loglevel=DEBUG -B
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - web
+    networks:
+      - backend
+    environment:
+      - PYTHONPATH=./
+
+networks:
+  backend:
+    driver: bridge
