@@ -34,7 +34,7 @@ class ExchangeView(TemplateView):
 
             return JsonResponse(data={'result': result})
 
-        return JsonResponse(data={'errors': form.errors})
+        return JsonResponse(data={'errors': form.errors}, status=400)
 
 
 

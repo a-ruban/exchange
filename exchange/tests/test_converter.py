@@ -49,6 +49,7 @@ class TestConversionCase(TestCase):
         self.assertContains(
             response,
             b'{"errors": {"currency_from": ["Ensure this value has',
+            status_code=400
         )
 
     def test_incorrect_currency(self):
