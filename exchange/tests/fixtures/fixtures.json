@@ -1,0 +1,38 @@
+[
+  {
+    "model": "exchange.currencyrate",
+    "pk": 1,
+    "fields": {
+      "name": "Czech koruna",
+      "abbreviation": "CZK",
+      "current_rate": 23.470712
+    }
+  },
+  {
+    "model": "exchange.currencyrate",
+    "pk": 2,
+    "fields": {
+      "name": "Czech koruna",
+      "abbreviation": "PLN",
+      "current_rate": 3.958384
+    }
+  },
+  {
+    "model": "exchange.currencyrate",
+    "pk": 3,
+    "fields": {
+      "name": "Euro",
+      "abbreviation": "EUR",
+      "current_rate": 0.912253
+    }
+  },
+  {
+    "model": "exchange.currencyrate",
+    "pk": 4,
+    "fields": {
+      "name": "US dollar",
+      "abbreviation": "USD",
+      "current_rate": 1.0
+    }
+  }
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>interview-top</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container bg-light border rounded-0">
+        <form action="" method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-xl-3">
+                        <select class="form-control" name="currency_from">
+                            {% for currency in currencies %}
+                            <option class="dropdown-item" role="presentation">{{ currency }}</option>
+                            {% endfor %}
+                        </select>
+                        <select class="form-control"  role="menu" name="currency_to">
+                            {% for currency in currencies %}
+                            <option class="dropdown-item" role="presentation">{{ currency }}</option>
+                            {% endfor %}
+                        </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-xl-3"><input class="form-control" type="number" name="amount" value="0" min="0"></div>
+                </div>
+            </div>
+        <button class="btn btn-primary btn-lg"  type="submit" style="padding: 16px;background-color: rgb(255,0,0);">Convert</button>
+        </form></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".dropdown-menu a").click(function(){
+        $(this).closest('.dropdown').find('button').text($(this).text());
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -8,8 +8,9 @@ services:
       - backend
     environment:
       - PYTHONPATH=./
+      - PYTHONPATH=./exchange
       - DEVELOPMENT=True
-    command: python manage.py runserver 0.0.0.0:8000
+    command: /bin/sh ./scripts/start.sh
 
     ports:
       - "8000:8000"

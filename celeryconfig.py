@@ -1,0 +1,7 @@
+BROKER_URL = 'redis://redis:6379'
+RESULT_BACKEND = 'redis://redis:6379'
+ACCEPT_CONTENT = ['application/json']
+RESULT_SERIALIZER = 'json'
+TASK_SERIALIZER = 'json'
+CELERYBEAT_MAX_LOOP_INTERVAL = 60
+CELERY_TIMEZONE = 'Europe/Kiev'
