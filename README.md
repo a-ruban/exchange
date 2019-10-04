@@ -23,5 +23,8 @@ curl -d "currency_from=USD&currency_to=EUR&amount=5" http://127.0.0.1:8000/conve
 {"result": 0.16829196061782317}
 ```
 
+# Running tests
+docker-compose -f docker-dev-compose.yml run web python manage.py test
+
 
 
